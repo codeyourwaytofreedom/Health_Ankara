@@ -12,17 +12,19 @@ const Home_p = () => {
                         src="/heart.png"
                         width={60}
                         height={100}
+                        alt="xxx"
                         />
                     </Link>
                 </div>
                 <div className={h.home_skeleton_helpdesk}>
-                    <Link href="/helpdesk">
+                <Link href="/chat">
                         <Image
                         src="/helpdesk.png"
                         width={160}
                         height={120}
+                        alt="xxx"
                         />
-                    </Link>
+                         </Link>
                 </div>
                 
                     
