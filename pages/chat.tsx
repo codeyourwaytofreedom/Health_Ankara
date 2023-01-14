@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import { useState } from "react";
 
 
-const socket = io.connect("http://localhost:9000")
+const socket = io.connect("http://localhost:9000", { autoConnect: false })
 
 
 const Chat = () => {
@@ -13,6 +13,7 @@ const Chat = () => {
     useEffect(() => {
       socket.on('connect', () => {
         setIsConnected(true);
+        console.log(socket.id)
       });
   
       socket.on('disconnect', () => {
@@ -33,7 +34,10 @@ const Chat = () => {
     const message = useRef();
 
     const sendMessage = () => {
+      socket.connect();
         socket.emit('chat message', message.current.value);
+        socket.emit('set nickname', "mrmoody");
+        console.log(Response)
     }
 
     return ( 

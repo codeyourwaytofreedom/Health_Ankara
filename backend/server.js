@@ -14,15 +14,26 @@ const io = new Server(server, {
 
 app.use(cors({ origin: true, credentials: true }));
 
+
+
+
 io.on('connection', (socket) => {
   console.log('a user connected');
-
+  console.log(socket.id);
+  
   // on message
   socket.on('chat message', (msg) => {
     console.log('message: ' + msg);
     io.emit('chat message', "I am happy to help you. how can I help?");
   });
+  socket.on('set nickname', (nickname) => {
+    socket.nickname = nickname;
+    console.log(nickname)
+  });
 
+/*   socket.onAny((event, ...args) => {
+    console.log(event, args);
+  }); */
 
 });
 
