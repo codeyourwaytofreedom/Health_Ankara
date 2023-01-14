@@ -15,6 +15,15 @@ const Home_p = () => {
                         />
                     </Link>
                 </div>
+                <div className={h.home_skeleton_helpdesk}>
+                    <Link href="/helpdesk">
+                        <Image
+                        src="/helpdesk.png"
+                        width={160}
+                        height={120}
+                        />
+                    </Link>
+                </div>
                 
                     
             </div>

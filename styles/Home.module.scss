@@ -12,9 +12,14 @@
         justify-content: center;
         align-items: start;
         &_heart{
-            position: relative;
+            position: absolute;
             top:17%;
             left:50%;
+        }
+        &_helpdesk{
+            position: absolute;
+            bottom: 3%;
+            right:2%;
         }
     }
 }
