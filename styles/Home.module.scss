@@ -8,6 +8,13 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-
+        display: grid;
+        justify-content: center;
+        align-items: start;
+        &_heart{
+            position: relative;
+            top:17%;
+            left:50%;
+        }
     }
 }
