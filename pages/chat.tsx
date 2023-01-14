@@ -22,6 +22,10 @@ const Chat = () => {
       socket.on('pong', () => {
         setLastPong("ponged");
       });
+
+      socket.on('chat message', () => {
+        console.log("message sent")
+      });
   
       return () => {
         socket.off('connect');
@@ -30,15 +34,16 @@ const Chat = () => {
       };
     }, []);
   
-    const sendPing = () => {
-      socket.emit('ping');
+
+    const sendMessage = () => {
+        socket.emit('chat message', 'This is chat message');
     }
 
     return ( 
         <div>
         <p>Connected: { isConnected }</p>
         <p>Last pong: { lastPong }</p>
-        <button onClick={ sendPing }>Send ping</button>
+        <button onClick={ sendMessage }>Send ping</button>
       </div>
     );
 }
