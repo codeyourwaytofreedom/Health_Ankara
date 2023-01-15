@@ -1,10 +1,11 @@
 .home{
     background-color: rgb(230, 227, 227);
+    position: relative;
     &_skeleton{
         height: 100vh;
         max-height: 800px;
         border: 2px solid black;
-        background-image: url("/sk.png");
+        //background-image: url("/sk.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -21,5 +22,13 @@
             bottom: 3%;
             right:2%;
         }
+    }
+    &_chatbox{
+        position: absolute;
+        bottom: 200px;
+        right: 20px;
+        width: 300px;
+        height: 300px;
+        border: 3px solid salmon;
     }
 }

@@ -20,11 +20,6 @@ const Desk = () => {
         socket.on('disconnect', () => {
         });
 
-/*         socket.on('answer', answer => {
-          console.log(answer)
-          setAnswer(answer)
-        }); */
-
         socket.on('receive-question', q => {
             console.log(q)
             setAnswer(q)
