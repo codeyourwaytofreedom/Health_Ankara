@@ -7,26 +7,23 @@ const socket = io.connect("http://localhost:9000", { autoConnect: false })
 
 
 const Chat = () => {
-    const [isConnected, setIsConnected] = useState(socket.connected);
-    const [mss, setMs] = useState([]);
-    const [customer_messages, setCustomerMessages] = useState([])
+    const [fb, setFB] = useState("")
   
     useEffect(() => {
       socket.on('connect', () => {
-        setIsConnected(socket.id);
         //console.log(socket.id)
+        setFB(socket.id)
       });
   
       socket.on('disconnect', () => {
-        setIsConnected(false);
       });
   
       socket.on('chat message', msg => {
-        setCustomerMessages([...customer_messages, msg])
       });
 
       socket.on('answer', answer => {
         console.log(answer)
+        setFB(answer)
       });
 
   
@@ -40,38 +37,21 @@ const Chat = () => {
     const message = useRef();
     const customer = useRef();
 
-    const sendMessage = () => {
+/*     const sendMessage = () => {
       socket.connect();
       socket.emit('chat message', message.current.value);
       setMs([...mss, message.current.value])
-    }
+    } */
 
     const handle_customer = () => {
       socket.connect();
-      socket.emit('customer-asking', customer.current.value, isConnected);
+      socket.emit('customer-asking', customer.current.value);
     }
 
     return ( 
         <div>
-        <p>Connected: { isConnected }</p>
-        {
-          mss.map(m =>
-              <p>Message: { m }</p>
-            )
-        }
-
-        {
-          customer_messages.map(m =>
-              <p>Message: { m }</p>
-            )
-        }
-        
-        <input type="text" ref={message} />
-        <button onClick={ sendMessage }>Send ping</button>
-        <br />
-        <br />
-        <br />
         <input type="text" ref={customer} />
+        <span>{fb}</span>
         <button onClick={ handle_customer }>Customer</button>
         <br />
       </div>

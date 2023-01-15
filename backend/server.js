@@ -15,8 +15,6 @@ const io = new Server(server, {
 app.use(cors({ origin: true, credentials: true }));
 
 
-
-
 io.on('connection', (socket) => {
   //console.log('a user connected');
   //console.log(socket.id);
@@ -28,9 +26,9 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('chat message', msg);  // --> to all users but the sender
   });
 
-  socket.on('customer-asking', (question,id) => {
-    console.log(question,id)
-    socket.to(id).emit('answer', "I received your question")
+  socket.on('customer-asking', (question) => {
+    console.log(question)
+    io.emit('answer', "now working...")
   })
 
 });

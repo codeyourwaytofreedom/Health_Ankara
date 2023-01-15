@@ -26,6 +26,11 @@ const Home_p = () => {
                         />
                          </Link>
                 </div>
+                <span style={{position:"absolute", top:"200px", left:"200px"}}>
+                    <Link  href="/desk">
+                        Desk "Officer only"
+                    </Link>
+                </span>
                 
                     
             </div>
