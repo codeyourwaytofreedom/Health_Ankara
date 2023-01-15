@@ -18,25 +18,30 @@ app.use(cors({ origin: true, credentials: true }));
 
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
-  console.log(socket.id);
+  //console.log('a user connected');
+  //console.log(socket.id);
   
   // on message
   socket.on('chat message', (msg) => {
     console.log('message: ' + msg);
-    io.emit('chat message', "I am happy to help you. how can I help?");
-  });
-  socket.on('set nickname', (nickname) => {
-    socket.nickname = nickname;
-    console.log(nickname)
+    //io.emit('chat message', msg); // --> to all users, including the sender
+    socket.broadcast.emit('chat message', msg);  // --> to all users but the sender
   });
 
-/*   socket.onAny((event, ...args) => {
-    console.log(event, args);
-  }); */
+  socket.on('customer-asking', (question,id) => {
+    console.log(question,id)
+    socket.to(id).emit('answer', "I received your question")
+  })
 
 });
 
 server.listen(9000, () => {
   console.log('listening on 9000');
 });
+
+
+
+//could be useful
+/*   socket.onAny((event, ...args) => {
+    console.log(event, args);
+  }); */
