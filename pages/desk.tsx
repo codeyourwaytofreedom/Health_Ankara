@@ -10,6 +10,7 @@ const socket = io.connect("http://localhost:9000")
 
 const Desk = () => {
     const [answer, setAnswer] = useState("waiting for question");
+    const ans = useRef(); 
     //const socket = io.connect("http://localhost:9000")
     useEffect(() => {
         socket.on('connect', () => {
@@ -19,12 +20,12 @@ const Desk = () => {
         socket.on('disconnect', () => {
         });
 
-        socket.on('answer', answer => {
+/*         socket.on('answer', answer => {
           console.log(answer)
           setAnswer(answer)
-        });
+        }); */
 
-        socket.on('customer-asking', q => {
+        socket.on('receive-question', q => {
             console.log(q)
             setAnswer(q)
           });
@@ -32,7 +33,7 @@ const Desk = () => {
 
       const handle_desk = () => {
         socket.connect()
-        socket.emit("customer-asking", "question from desk")
+        socket.emit("answer", ans.current.value)
       }
 
       
@@ -41,7 +42,7 @@ const Desk = () => {
             <div>
                 <h1>{answer}</h1>
                 <br />
-                <input type="text" />
+                <input type="text" ref={ans}/>
                 <button onClick={handle_desk}>Answer the Customer</button>
             </div>
             

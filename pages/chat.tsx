@@ -12,7 +12,7 @@ const Chat = () => {
     useEffect(() => {
       socket.on('connect', () => {
         //console.log(socket.id)
-        setFB(socket.id)
+        //setFB(socket.id)
       });
   
       socket.on('disconnect', () => {

@@ -28,7 +28,11 @@ io.on('connection', (socket) => {
 
   socket.on('customer-asking', (question) => {
     console.log(question)
-    io.emit('answer', "now working...")
+    io.emit('receive-question', question)
+  })
+  socket.on('answer', (answer) => {
+    console.log(answer)
+    io.emit('answer', answer)
   })
 
 });
