@@ -27,12 +27,12 @@ io.on('connection', (socket) => {
   });
 
   socket.on('customer-asking', (question) => {
-    console.log(question)
-    io.emit('receive-question', question)
+    console.log(question, socket.id)
+    io.emit('receive-question', question, socket.id)
   })
   socket.on('answer', (answer) => {
-    console.log(answer)
-    io.emit('answer', answer)
+    console.log(answer, "arrived")
+    io.to(answer.to).emit('answer', {to:answer.id, content:answer.content})
   })
 
 });

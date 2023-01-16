@@ -13,8 +13,8 @@ const Home_p = () => {
                     <Link href="/cardio">
                         <Image
                         src="/heart.png"
-                        width={135}
-                        height={180}
+                        width={60}
+                        height={80}
                         alt="xxx"
                         />
                     </Link>
@@ -37,7 +37,6 @@ const Home_p = () => {
                 </span>
             </div>
             <Chat modal={modal}/>
-                
         </div>
       );
 }

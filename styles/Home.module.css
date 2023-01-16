@@ -1,11 +1,12 @@
 .home {
-  background-color: rgb(230, 227, 227);
+  background-color: rgb(118, 21, 37);
   position: relative;
 }
 .home_skeleton {
   height: 100vh;
   max-height: 800px;
   border: 2px solid black;
+  background-image: url("/skl.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -19,12 +20,12 @@
   left: 50%;
 }
 .home_skeleton_helpdesk {
-  position: absolute;
+  position: fixed;
   bottom: 3%;
   right: 2%;
 }
 .home_chatbox {
-  position: absolute;
+  position: fixed;
   bottom: 200px;
   right: 20px;
   width: 300px;
@@ -32,6 +33,9 @@
   border: 2px solid rgb(211, 209, 209);
   background-color: black;
   border-radius: 15px;
+  background-image: url("../public/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .home_chatbox_message_container {
   height: 370px;
@@ -40,13 +44,13 @@
   flex-direction: column;
   padding: 10px;
   overflow: scroll;
-  row-gap: 2px;
+  row-gap: 5px;
 }
 .home_chatbox_message_container::-webkit-scrollbar {
   display: none;
 }
 .home_chatbox_message_container_message_left {
-  background-color: yellow;
+  background-color: rgb(249, 249, 125);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -58,7 +62,7 @@
   max-width: 90%;
 }
 .home_chatbox_message_container_message_right {
-  background-color: lightgreen;
+  background-color: whitesmoke;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
