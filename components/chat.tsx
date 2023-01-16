@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import io from 'socket.io-client';
 import { useState } from "react";
+import h from "../styles/Home.module.css";
+import e from "cors";
 
 
 const socket = io.connect("http://localhost:9000", { autoConnect: false })
 
 
-const Chat = () => {
+const Chat = ({modal}) => {
     const [fb, setFB] = useState("")
   
     useEffect(() => {
@@ -34,27 +36,28 @@ const Chat = () => {
       };
     }, []);
     
-    const message = useRef();
     const customer = useRef();
 
-/*     const sendMessage = () => {
-      socket.connect();
-      socket.emit('chat message', message.current.value);
-      setMs([...mss, message.current.value])
-    } */
 
-    const handle_customer = () => {
+    const handle_customer = (e) => {
+      e.preventDefault();
+      console.log("sent message")
       socket.connect();
       socket.emit('customer-asking', customer.current.value);
     }
 
     return ( 
-        <div>
-        <input type="text" ref={customer} />
-        <span>{fb}</span>
-        <button onClick={ handle_customer }>Customer</button>
-        <br />
-      </div>
+
+          <div className={h.home_chatbox} style={{display: modal ? "grid" : "none"}}>
+            <div>
+              <form action="">
+                <input type="text" ref={customer} />
+                <br />
+                <button type="submit" onClick={ (e)=> handle_customer(e) }>Customer</button>
+              </form>
+            </div>
+              
+          </div>
     );
 }
  

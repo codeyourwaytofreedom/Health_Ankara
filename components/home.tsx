@@ -2,6 +2,7 @@ import h from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from 'next/link';
 import { useState } from "react";
+import Chat from "./chat";
 
 const Home_p = () => {
     const [modal, setModal] = useState(false)
@@ -35,9 +36,7 @@ const Home_p = () => {
                     </Link>
                 </span>
             </div>
-            <div className={h.home_chatbox} style={{display: modal ? "grid" : "none"}}>
-                    Modal
-            </div>
+            <Chat modal={modal}/>
                 
         </div>
       );
