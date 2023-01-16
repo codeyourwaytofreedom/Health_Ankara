@@ -28,16 +28,25 @@
   bottom: 200px;
   right: 20px;
   width: 300px;
-  height: 400px;
+  height: 420px;
   border: 2px solid rgb(211, 209, 209);
-  background-color: white;
+  background-color: black;
   border-radius: 15px;
-  padding: 15px 5px;
+}
+.home_chatbox_message_container {
+  height: 370px;
+  width: 300px;
+  display: flex;
   flex-direction: column;
+  padding: 10px;
+  overflow: scroll;
   row-gap: 2px;
 }
-.home_chatbox_message {
-  border: 2px solid green;
+.home_chatbox_message_container::-webkit-scrollbar {
+  display: none;
+}
+.home_chatbox_message_container_message_left {
+  background-color: yellow;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -45,16 +54,31 @@
   width: -moz-fit-content;
   width: fit-content;
   padding: 3px;
+  border-radius: 5px;
+  max-width: 90%;
+}
+.home_chatbox_message_container_message_right {
+  background-color: lightgreen;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px;
+  display: flex;
+  align-self: flex-end;
+  border-radius: 5px;
+  max-width: 90%;
 }
 .home_chatbox_sender {
-  border: 1px solid crimson;
   width: 90%;
   position: absolute;
   left: 5%;
   bottom: 10px;
   height: 30px;
   border-radius: 30px;
-  background-color: silver;
+  background-color: whitesmoke;
   display: grid;
   align-items: center;
   color: black;

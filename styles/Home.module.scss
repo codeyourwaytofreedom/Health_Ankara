@@ -28,28 +28,51 @@
         bottom: 200px;
         right: 20px;
         width: 300px;
-        height: 400px;
+        height: 420px;
         border: 2px solid rgb(211, 209, 209);
-        background-color: white;
+        background-color: black;
         border-radius: 15px;
-        padding: 15px 5px;
-        flex-direction: column;
-        row-gap: 2px;
-        &_message{
-            border: 2px solid green;
-            height: fit-content;
-            width: fit-content;
-            padding: 3px;
+        &_message_container{
+            //border: 2px solid white;
+            height: 370px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            overflow: scroll;
+            row-gap: 2px;
+            &::-webkit-scrollbar {
+                display: none;
+              }
+            &_message_left{
+                background-color: yellow;
+                height: fit-content;
+                width: fit-content;
+                padding: 3px;
+                border-radius: 5px;
+                max-width: 90%;
+            }
+            &_message_right{
+                background-color: lightgreen;
+                height: fit-content;
+                width: fit-content;
+                padding: 3px;
+                display: flex;
+                align-self: flex-end;
+                border-radius: 5px;
+                max-width: 90%;
+            }
         }
+        
         &_sender{
-            border:1px solid crimson;
+            //border:1px solid crimson;
             width: 90%;
             position: absolute;
             left: 5%;
             bottom: 10px;
             height: 30px;
             border-radius: 30px;
-            background-color: silver;
+            background-color: whitesmoke;
             display: grid;
             align-items: center;
             color: black;
