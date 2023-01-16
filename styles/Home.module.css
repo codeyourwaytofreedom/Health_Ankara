@@ -31,5 +31,40 @@
   height: 400px;
   border: 2px solid rgb(211, 209, 209);
   background-color: white;
+  border-radius: 15px;
+  padding: 15px 5px;
+  flex-direction: column;
+  row-gap: 2px;
+}
+.home_chatbox_message {
+  border: 2px solid green;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px;
+}
+.home_chatbox_sender {
+  border: 1px solid crimson;
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  bottom: 10px;
+  height: 30px;
   border-radius: 30px;
+  background-color: silver;
+  display: grid;
+  align-items: center;
+  color: black;
+}
+.home_chatbox_sender input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  padding-left: 10px;
+}
+.home_chatbox_sender input:focus {
+  outline: none;
 }/*# sourceMappingURL=Home.module.css.map */
