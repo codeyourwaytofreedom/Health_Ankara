@@ -37,6 +37,16 @@ const Desk = () => {
       
     return ( 
         <div className={d.desk}>
+            <div className={d.desk_actives}>
+                {
+                    online_users.map(u =>
+                        <div className={d.desk_actives_user}>
+                            Active User
+                        </div>
+                    )
+                }
+                
+            </div>
             <div>
                 <h1>{answer}</h1>
                 <br />

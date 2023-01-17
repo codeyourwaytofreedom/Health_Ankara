@@ -32,7 +32,7 @@ const Chat = ({modal}) => {
               {
                 my_messages.map((m) => 
                   <div className={m.who === "desk" ? h.home_chatbox_message_container_message_right : h.home_chatbox_message_container_message_left}>
-                    {m.message.content}
+                    {m.message.content ?? m.message}
                   </div>
                 )
               }

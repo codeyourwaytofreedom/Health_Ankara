@@ -1,7 +1,19 @@
 .desk {
-  border: 3px solid chartreuse;
-  display: grid;
+  background-color: silver;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.desk_actives {
+  border: 2px solid gold;
+  height: 200px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.desk_actives_user {
+  border: 2px solid crimson;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=desk.module.css.map */
