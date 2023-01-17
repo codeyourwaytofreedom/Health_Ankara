@@ -7,7 +7,6 @@ const socket = io.connect("http://localhost:9000")
 const User = ({uniq}) => {
     const [user_id, setUserid] = useState();
     const [messages, setMessages] = useState([]);
-
     useEffect(() => {
         socket.on('connect', () => {
         });
@@ -29,6 +28,7 @@ const User = ({uniq}) => {
     return ( 
         <div className={d.desk_actives_user}>
             <h3>{uniq}</h3>
+            <h3></h3>
             {
                 messages.map((m) => 
                   <div>

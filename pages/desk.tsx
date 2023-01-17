@@ -18,6 +18,7 @@ const Desk = () => {
     useEffect(() => {
         socket.on('connect', () => {
             setAnswer(socket.id)
+            console.log(socket.id)
         });
     
         socket.on('disconnect', () => {
@@ -29,6 +30,10 @@ const Desk = () => {
             {
                 setOnline_users([...online_users, id])
             }
+            else{
+                console.log("zaten var")
+            }
+            console.log(online_users)
           });
       });
 
@@ -41,22 +46,16 @@ const Desk = () => {
     return ( 
         <div className={d.desk}>
             <div className={d.desk_actives}>
-            {
-                online_users.map(u =>
-                    <User uniq={u}/> 
-                )
-            }
+            <User uniq={online_users[0]} /> 
+            <User uniq={online_users[1]} /> 
+            <User uniq={online_users[2]} /> 
             </div>
             
             
             <div>
-                <h1>{answer}</h1>
-                <br />
-                <br />
                 <h3>{online_users.length}</h3>
                 <br />
                 <br />
-
                 <input type="text" ref={ans}/>
                 <button onClick={handle_desk}>Answer the Customer</button>
             </div>

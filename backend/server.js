@@ -14,6 +14,7 @@ const io = new Server(server, {
 
 app.use(cors({ origin: true, credentials: true }));
 
+let active_users = [];
 
 io.on('connection', (socket) => {
   //console.log('a user connected');
@@ -27,8 +28,15 @@ io.on('connection', (socket) => {
   });
 
   socket.on('customer-asking', (question) => {
-    console.log(question, socket.id)
+    console.log(socket.id)
+    active_users.push(socket.id)
+    console.log(active_users)
     io.emit('receive-question', question, socket.id)
+  })
+  socket.on('disconnect', () => {
+    active_users = active_users.filter( user => user!==socket.id)
+    console.log(socket.id, "this id disconnected")
+    console.log(active_users)
   })
   socket.on('answer', (answer) => {
     console.log(answer, "arrived")
