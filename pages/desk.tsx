@@ -52,9 +52,11 @@ const Desk = () => {
     return ( 
         <div className={d.desk}>
             <div className={d.desk_actives}>
-            <User uniq={online_users[0]} /> 
-            <User uniq={online_users[1]} /> 
-            <User uniq={online_users[2]} /> 
+                {
+                    online_users.map(u=>
+                        <User uniq={u} />
+                    )
+                }
             </div>
             
             

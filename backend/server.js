@@ -29,10 +29,13 @@ io.on('connection', (socket) => {
 
   socket.on('customer-asking', (question) => {
     console.log(socket.id)
-    active_users.push(socket.id)
-    console.log(active_users)
+    if(!active_users.includes(socket.id))
+    {
+      active_users.push(socket.id);
+      io.emit('active-users', active_users);
+    }
     io.emit('receive-question', question, socket.id)
-    io.emit('active-users', active_users)
+    
   })
   socket.on('disconnect', () => {
     active_users = active_users.filter( user => user!==socket.id)
