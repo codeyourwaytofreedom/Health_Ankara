@@ -24,7 +24,7 @@ const Desk = () => {
         socket.on('disconnect', () => {
         });
 
-        socket.on('receive-question', (q, id) => {
+/*         socket.on('receive-question', (q, id) => {
             setAnswer(id)
             if(!online_users.includes(id))
             {
@@ -34,7 +34,13 @@ const Desk = () => {
                 console.log("zaten var")
             }
             console.log(online_users)
-          });
+          }); */
+        
+        socket.on('active-users', (au) => {
+            console.log("active users from backend",au)
+            setOnline_users(au)
+        });
+
       });
 
       const handle_desk = () => {

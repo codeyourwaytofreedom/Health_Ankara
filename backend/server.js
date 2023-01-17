@@ -32,11 +32,13 @@ io.on('connection', (socket) => {
     active_users.push(socket.id)
     console.log(active_users)
     io.emit('receive-question', question, socket.id)
+    io.emit('active-users', active_users)
   })
   socket.on('disconnect', () => {
     active_users = active_users.filter( user => user!==socket.id)
     console.log(socket.id, "this id disconnected")
     console.log(active_users)
+    io.emit('active-users', active_users)
   })
   socket.on('answer', (answer) => {
     console.log(answer, "arrived")
