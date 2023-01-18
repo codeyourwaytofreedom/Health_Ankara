@@ -33,14 +33,14 @@ io.on('connection', (socket) => {
     active_users.map(au => ids.push(au.user_id))
     if(!ids.includes(socket.id))
     {
-      active_users.push({user_id:socket.id, user_messages:[question]});
+      active_users.push({user_id:socket.id, user_messages:[{q:question}]});
       console.log(active_users);
       io.emit('active-users', active_users);
       io.emit('receive-question', question, socket.id);
     }
     else{
       userIndex = active_users.findIndex((user => user.user_id === socket.id));
-      active_users[userIndex].user_messages.push(question)
+      active_users[userIndex].user_messages.push({q:question})
       console.log(userIndex)
       io.emit('receive-question', question, socket.id)
       io.emit('active-users', active_users);
@@ -57,7 +57,6 @@ io.on('connection', (socket) => {
   })
   socket.on('answer', (answer) => {
     console.log(answer, "arrived")
-    io.emit('answer', answer)
   })
 });
 

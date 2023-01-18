@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { use, useEffect, useRef } from "react";
 import io from 'socket.io-client';
 import { useState } from "react";
 import h from "../styles/Home.module.css";
@@ -10,24 +10,37 @@ const socket = io.connect("http://localhost:9000")
 
 const Chat = ({modal}) => {
   const [my_messages, setMymessages] = useState([]);
+  const [chatId, setChatId] = useState(null)
   const customer = useRef();
   
-  socket.on('answer', answer => {
-    setMymessages([...my_messages, {who:"desk", message:answer}])
-  });
+  useEffect(()=> {
+/*     socket.on('connect', () =>{
+      setChatId(socket.id)
+    }) */
+    socket.on('answer', (answer,id) => {
+      if(chatId === id)
+      {
+        setMymessages([...my_messages, {who:"desk", message:answer}])
+      }
+    });
+  })
+  
 
   const handle_customer = (e) => {
     e.preventDefault();
     setMymessages([...my_messages, {who:"customer", message:customer.current.value}])
     console.log(my_messages)
     socket.connect();
-    socket.emit('customer-asking', customer.current.value);
+    setChatId(socket.id)
+    socket.emit('customer-asking', customer.current.value, chatId);
     customer.current.value = "";
+
   }
 
     return ( 
 
           <div className={h.home_chatbox} style={{display: modal ? "flex" : "none"}}>
+             <h3 style={{color:"white"}}>{chatId}</h3>
             <div className={h.home_chatbox_message_container}>
               {
                 my_messages.map((m) => 

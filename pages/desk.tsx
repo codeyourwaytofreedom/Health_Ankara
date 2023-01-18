@@ -11,13 +11,12 @@ const socket = io.connect("http://localhost:9000")
 
 
 const Desk = () => {
-    const [answer, setAnswer] = useState("waiting for question");
+    const [last_asker, setLastAsker] = useState();
     const ans = useRef(); 
     const [online_users, setOnline_users] = useState([])
 
     useEffect(() => {
         socket.on('connect', () => {
-            setAnswer(socket.id)
             console.log(socket.id)
         });
     
@@ -25,18 +24,22 @@ const Desk = () => {
         });
         
         socket.on('active-users', (au) => {
-            console.log("active users from backend",au)
+            //console.log("active users from backend",au)
             setOnline_users(au)
         });
 
         socket.on('take-him-out', (id) => {
             setOnline_users(online_users.filter(ou => ou.user_id !== id))
         });
+        socket.on('receive-question', (q,id)=> {
+            console.log(q,"this question received from: ", id)
+            setLastAsker(id)
+        })
       });
 
       const handle_desk = () => {
         socket.connect()
-        socket.emit("answer",{to:answer, content:ans.current.value})
+        socket.emit("answer",ans.current.value)
       }
 
       
@@ -45,10 +48,14 @@ const Desk = () => {
             <div className={d.desk_actives}>
                 {
                     online_users.map(u=>
-                        <User uniq={u.user_id} />
+                        <User 
+                            uniq={u.user_id} 
+                            messages={u.user_messages}
+                        />
                     )
                 }
             </div>
+            <h1>Son Soru Soran: {last_asker}</h1>
             
             
             <div>

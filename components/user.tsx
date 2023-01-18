@@ -4,10 +4,10 @@ import io from 'socket.io-client';
 
 const socket = io.connect("http://localhost:9000")
 
-const User = ({uniq}) => {
+const User = ({uniq, messages}) => {
     const [user_id, setUserid] = useState();
-    const [messages, setMessages] = useState([]);
-    useEffect(() => {
+    //const [messages, setMessages] = useState([]);
+/*     useEffect(() => {
         socket.on('connect', () => {
         });
     
@@ -16,14 +16,14 @@ const User = ({uniq}) => {
 
         socket.on('receive-question', (q, id) => {
             console.log(id)
-            console.log(uniq)
-            if(uniq === id)
+            console.log(uniq) */
+/*             if(uniq === id)
             {
                 setUserid(id)
                 setMessages([...messages, q])
-            }
-          });
-      });
+            } */
+/*           });
+      }); */
 
     return ( 
         <div className={d.desk_actives_user}>
@@ -32,7 +32,7 @@ const User = ({uniq}) => {
             {
                 messages.map((m) => 
                   <div>
-                    {m}
+                    {m.q ?? m.a}
                   </div>
                 )
               }
