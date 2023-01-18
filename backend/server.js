@@ -29,25 +29,36 @@ io.on('connection', (socket) => {
 
   socket.on('customer-asking', (question) => {
     console.log(socket.id)
-    if(!active_users.includes(socket.id))
+    let ids = [];
+    active_users.map(au => ids.push(au.user_id))
+    if(!ids.includes(socket.id))
     {
-      active_users.push(socket.id);
+      active_users.push({user_id:socket.id, user_messages:[question]});
+      console.log(active_users);
+      io.emit('active-users', active_users);
+      io.emit('receive-question', question, socket.id);
+    }
+    else{
+      userIndex = active_users.findIndex((user => user.user_id === socket.id));
+      active_users[userIndex].user_messages.push(question)
+      console.log(userIndex)
+      io.emit('receive-question', question, socket.id)
       io.emit('active-users', active_users);
     }
-    io.emit('receive-question', question, socket.id)
+    
     
   })
   socket.on('disconnect', () => {
-    active_users = active_users.filter( user => user!==socket.id)
+    active_users = active_users.filter( user => user.user_id !==socket.id)
     console.log(socket.id, "this id disconnected")
     console.log(active_users)
-    io.emit('active-users', active_users)
+    //io.emit('active-users', active_users)
+    io.emit("take-him-out", socket.id)
   })
   socket.on('answer', (answer) => {
     console.log(answer, "arrived")
-    io.to(answer.to).emit('answer', {to:answer.id, content:answer.content})
+    io.emit('answer', answer)
   })
-
 });
 
 server.listen(9000, () => {

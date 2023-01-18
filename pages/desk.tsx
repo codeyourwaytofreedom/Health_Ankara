@@ -23,24 +23,15 @@ const Desk = () => {
     
         socket.on('disconnect', () => {
         });
-
-/*         socket.on('receive-question', (q, id) => {
-            setAnswer(id)
-            if(!online_users.includes(id))
-            {
-                setOnline_users([...online_users, id])
-            }
-            else{
-                console.log("zaten var")
-            }
-            console.log(online_users)
-          }); */
         
         socket.on('active-users', (au) => {
             console.log("active users from backend",au)
             setOnline_users(au)
         });
 
+        socket.on('take-him-out', (id) => {
+            setOnline_users(online_users.filter(ou => ou.user_id !== id))
+        });
       });
 
       const handle_desk = () => {
@@ -54,7 +45,7 @@ const Desk = () => {
             <div className={d.desk_actives}>
                 {
                     online_users.map(u=>
-                        <User uniq={u} />
+                        <User uniq={u.user_id} />
                     )
                 }
             </div>
