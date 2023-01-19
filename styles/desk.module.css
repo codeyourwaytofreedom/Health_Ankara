@@ -6,7 +6,6 @@
 }
 .desk_actives {
   border: 2px solid gold;
-  height: 200px;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -16,4 +15,43 @@
   display: grid;
   justify-content: center;
   align-items: center;
+}
+.desk_actives_user_container {
+  border: 2px solid white;
+  height: 370px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: scroll;
+  row-gap: 5px;
+}
+.desk_actives_user_container::-webkit-scrollbar {
+  display: none;
+}
+.desk_actives_user_container_message_left {
+  background-color: rgb(249, 249, 125);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px;
+  border-radius: 5px;
+  max-width: 90%;
+}
+.desk_actives_user_container_message_right {
+  background-color: whitesmoke;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px;
+  display: flex;
+  align-self: flex-end;
+  border-radius: 5px;
+  max-width: 90%;
 }/*# sourceMappingURL=desk.module.css.map */

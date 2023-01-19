@@ -12,11 +12,11 @@ const Chat = ({modal}) => {
   const [my_messages, setMymessages] = useState([]);
   const [chatId, setChatId] = useState(null)
   const customer = useRef();
-  
-  useEffect(()=> {
-/*     socket.on('connect', () =>{
+  socket.on('connect', () =>{
       setChatId(socket.id)
-    }) */
+    })
+  useEffect(()=> {
+    
     socket.connect();
     socket.on('desk-answer', (answer) => {
       console.log(answer.to)
@@ -33,8 +33,6 @@ const Chat = ({modal}) => {
     e.preventDefault();
     setMymessages([...my_messages, {who:"customer", message:customer.current.value}])
     console.log(my_messages)
-    socket.connect();
-    setChatId(socket.id)
     socket.emit('customer-asking', customer.current.value, chatId);
     customer.current.value = "";
 
@@ -43,7 +41,6 @@ const Chat = ({modal}) => {
     return ( 
 
           <div className={h.home_chatbox} style={{display: modal ? "flex" : "none"}}>
-             <h3 style={{color:"white"}}>{chatId}</h3>
             <div className={h.home_chatbox_message_container}>
               {
                 my_messages.map((m) => 
@@ -59,6 +56,7 @@ const Chat = ({modal}) => {
                 <input type="text" placeholder="Ask help desk..." ref={customer} />
               </form>
             </div>
+            <h3 style={{color:"white", position:"absolute", top:"-50px"}}>{chatId}</h3>
           </div>
     );
 }

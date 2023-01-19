@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import d from "../styles/desk.module.css";
 import io from 'socket.io-client';
+import h from "../styles/Home.module.css";
 
-const socket = io.connect("http://localhost:9000")
+const socket = io.connect("http://localhost:9000", { autoConnect: false })
 
 const User = ({uniq, messages}) => {
     const [user_id, setUserid] = useState();
@@ -34,21 +35,23 @@ const User = ({uniq, messages}) => {
     }
     
     return ( 
+      <>
         <div className={d.desk_actives_user}>
             <h3>{uniq}</h3>
-            {
+            <div className={d.desk_actives_user_container}>
+              {
                 messages.map((m) => 
-                  <div>
+                  <div className={m.q ? d.desk_actives_user_container_message_right : d.desk_actives_user_container_message_left}>
                     {m.q ?? m.a}
                   </div>
                 )
               }
+            </div>
             <form action="" onSubmit={(e)=>handle_desk(e)}>
               <input type="text" ref={ans}/>
             </form>
-            
-            <button onClick={handle_desk}>Answer the Customer</button>
         </div>
+      </>
      );
 }
  
