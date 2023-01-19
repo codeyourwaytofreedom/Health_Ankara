@@ -26,7 +26,8 @@ const User = ({uniq, messages}) => {
 /*           });
       }); */
 
-    const handle_desk = () => {
+    const handle_desk = (e) => {
+      e.preventDefault();
       socket.connect()
       socket.emit("answer",{to:uniq,text:ans.current.value})
       ans.current.value = "";
@@ -42,7 +43,10 @@ const User = ({uniq, messages}) => {
                   </div>
                 )
               }
-            <input type="text" ref={ans}/>
+            <form action="" onSubmit={(e)=>handle_desk(e)}>
+              <input type="text" ref={ans}/>
+            </form>
+            
             <button onClick={handle_desk}>Answer the Customer</button>
         </div>
      );

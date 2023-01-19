@@ -55,9 +55,12 @@ io.on('connection', (socket) => {
     //io.emit('active-users', active_users)
     io.emit("take-him-out", socket.id)
   })
-  socket.on('answer', (answer) => {
+  socket.on('answer', async (answer) => {
+    userIndex = await active_users.findIndex(async (user)=> user.id === answer.to)
+    active_users[userIndex].user_messages.push({a:answer.text})
+    io.emit('active-users', active_users);
     io.emit('desk-answer', answer)
-    console.log(answer, "arrived")
+    //console.log(answer, "arrived")
   })
 });
 
