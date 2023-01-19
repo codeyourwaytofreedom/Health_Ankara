@@ -17,10 +17,13 @@ const Chat = ({modal}) => {
 /*     socket.on('connect', () =>{
       setChatId(socket.id)
     }) */
-    socket.on('answer', (answer,id) => {
-      if(chatId === id)
+    socket.connect();
+    socket.on('desk-answer', (answer) => {
+      console.log(answer.to)
+      console.log(chatId)
+      if(answer.to === chatId)
       {
-        setMymessages([...my_messages, {who:"desk", message:answer}])
+        setMymessages([...my_messages, {who:"desk", message:answer.text}])
       }
     });
   })

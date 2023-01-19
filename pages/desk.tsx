@@ -35,12 +35,12 @@ const Desk = () => {
             console.log(q,"this question received from: ", id)
             setLastAsker(id)
         })
-      });
+      },[online_users]);
 
-      const handle_desk = () => {
+/*       const handle_desk = () => {
         socket.connect()
         socket.emit("answer",ans.current.value)
-      }
+      } */
 
       
     return ( 
@@ -62,8 +62,8 @@ const Desk = () => {
                 <h3>{online_users.length}</h3>
                 <br />
                 <br />
-                <input type="text" ref={ans}/>
-                <button onClick={handle_desk}>Answer the Customer</button>
+{/*                 <input type="text" ref={ans}/>
+                <button onClick={handle_desk}>Answer the Customer</button> */}
             </div>
             
         </div>

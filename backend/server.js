@@ -56,6 +56,7 @@ io.on('connection', (socket) => {
     io.emit("take-him-out", socket.id)
   })
   socket.on('answer', (answer) => {
+    io.emit('desk-answer', answer)
     console.log(answer, "arrived")
   })
 });
