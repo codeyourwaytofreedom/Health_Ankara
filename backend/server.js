@@ -18,7 +18,12 @@ let active_users = [];
 
 
 io.on('connection', (socket) => {
-  
+
+  socket.on('refresh', (h)=>{
+    console.log("despite refresh", active_users,"sent")
+    io.to(socket.id).emit('after-refresh', active_users)
+  })
+
   socket.on('customer-asking', (question) => {
     let ids = [];
     active_users.map(u => ids.push(u.user_id))
@@ -45,9 +50,8 @@ io.on('connection', (socket) => {
       active_users.splice(index,1)
       io.emit("active-users", active_users)
     }
-
-
   })
+  
   socket.on('answer', (answer) => {
     let ids = []
     active_users.map(u => ids.push(u.user_id));

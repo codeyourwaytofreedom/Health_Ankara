@@ -14,7 +14,14 @@ const Desk = () => {
     const ans = useRef(); 
     const [online_users, setOnline_users] = useState([]);
     const [desk_response, setDeskResponse] = useState();
-
+    
+    useEffect(()=> {
+        socket.emit('refresh', "hello")
+        socket.on('after-refresh', (au) => {
+            setOnline_users(au)
+        });
+    },[])
+    
     useEffect(() => {
         socket.on('connect', () => {
             console.log(socket.id)
@@ -36,12 +43,6 @@ const Desk = () => {
             setLastAsker(id)
         })
       });
-
-/*       const handle_desk = () => {
-        socket.connect()
-        socket.emit("answer",ans.current.value)
-      } */
-
       
     return ( 
         <div className={d.desk}>
