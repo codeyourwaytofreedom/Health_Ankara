@@ -15,9 +15,10 @@ const Chat = ({modal}) => {
 
   useEffect(()=> {
 
-    socket.on("confirm", (confirm) => {
-      console.log(confirm)
+    socket.on('desk-response', (response)=>{
+      console.log(response)
     })
+
     socket.on('desk-answer', (answer) => {
       setMymessages([...my_messages, {who:"desk", message:answer.text}])      
     });

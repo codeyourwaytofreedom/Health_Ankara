@@ -11,7 +11,6 @@ const socket = io.connect("http://localhost:9000")
 
 
 const Desk = () => {
-    const [last_asker, setLastAsker] = useState();
     const ans = useRef(); 
     const [online_users, setOnline_users] = useState([]);
     const [desk_response, setDeskResponse] = useState();
@@ -20,7 +19,6 @@ const Desk = () => {
         socket.on('connect', () => {
             console.log(socket.id)
         });
-    
         socket.on('desk-answer', (answer) => {
             console.log("desk response")
             setDeskResponse(answer.to)
@@ -50,22 +48,12 @@ const Desk = () => {
             <div className={d.desk_actives}>
                 {
                     online_users.map(u=>
-                        <User 
-                            uniq={u.user_id} 
-                            messages={u.user_messages}
-                        />
+                        <User uniq={u}/>
                     )
                 }
-            </div>
-            <h1>Son Soru Soran: {last_asker}</h1>
-            
-            
+            </div>        
             <div>
                 <h3>{online_users.length}</h3>
-                <br />
-                <br />
-{/*                 <input type="text" ref={ans}/>
-                <button onClick={handle_desk}>Answer the Customer</button> */}
             </div>
             
         </div>
