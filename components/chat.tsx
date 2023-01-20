@@ -14,13 +14,9 @@ const Chat = ({modal}) => {
   const customer = useRef();
 
   useEffect(()=> {
-
-    socket.on('desk-response', (response)=>{
-      console.log(response)
-    })
-
-    socket.on('desk-answer', (answer) => {
-      setMymessages([...my_messages, {who:"desk", message:answer.text}])      
+    socket.on('desk-response', (res) => {
+      console.log(res)
+      setMymessages([...my_messages, {who:"desk", message:res}])      
     });
   })
   
@@ -42,7 +38,7 @@ const Chat = ({modal}) => {
               {
                 my_messages.map((m) => 
                   <div className={m.who === "desk" ? h.home_chatbox_message_container_message_right : h.home_chatbox_message_container_message_left}>
-                    {m.message.content ?? m.message}
+                    {m.message}
                   </div>
                 )
               }

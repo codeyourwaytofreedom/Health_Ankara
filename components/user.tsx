@@ -3,16 +3,18 @@ import d from "../styles/desk.module.css";
 import io from 'socket.io-client';
 import h from "../styles/Home.module.css";
 
-const socket = io.connect("http://localhost:9000", { autoConnect: false })
+const socket = io.connect("http://localhost:9000")
 
-const User = ({uniq}) => {
+const User = ({uniq, user_messages}) => {
     const [user_id, setUserid] = useState();
     const ans = useRef(); 
+    const [messages_in_desk_window, setMessagesinDesk] = useState([]);
 
     const handle_desk = (e) => {
       e.preventDefault();
       socket.connect()
       socket.emit("answer",{to:uniq,text:ans.current.value})
+      setMessagesinDesk([...messages_in_desk_window, ans.current.value])
       ans.current.value = "";
     }
     
@@ -21,14 +23,14 @@ const User = ({uniq}) => {
         <div className={d.desk_actives_user}>
             <h3>{uniq}</h3>
             <div className={d.desk_actives_user_container}>
-{/*               {
-                messages.map((m) => 
+              {
+                user_messages.map((m) => 
                   <div className={m.q ? d.desk_actives_user_container_message_right : d.desk_actives_user_container_message_left}>
                     {m.q ?? m.a}
                   </div>
                 )
-              } */}
-              {uniq}
+              }
+              {/* {uniq} */}
             </div>
             <form action="" onSubmit={(e)=>handle_desk(e)}>
               <input type="text" ref={ans}/>

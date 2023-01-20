@@ -16,23 +16,29 @@ app.use(cors({ origin: true, credentials: true }));
 
 let active_users = [];
 
+
 io.on('connection', (socket) => {
-  //console.log('a user connected');
-  //console.log(socket.id);
   
   socket.on('customer-asking', (question) => {
-    if(!active_users.includes(socket.id))
+    let ids = [];
+    active_users.map(u => ids.push(u.user_id))
+    if(!ids.includes(socket.id))
     {
-      active_users.push(socket.id)
+      active_users.push({user_id:socket.id, user_messages:[{q:question}]})
     }
-    io.emit("active-users", active_users)
-    
+    else{
+      let ids = [];
+      active_users.map(u => ids.push(u.user_id))
+      let index = ids.indexOf(socket.id)
+      active_users[index].user_messages.push({q:question})
+    }
+    io.emit("active-users", active_users)    
   })
 
   socket.on('disconnect', () => {
     if(active_users.includes(socket.id))
     {
-      const index = active_users.indexOf(socket.id)
+      let index = active_users.indexOf(socket.id)
       active_users.splice(index,1)
       io.emit("active-users", active_users)
     }
@@ -41,7 +47,7 @@ io.on('connection', (socket) => {
   })
   socket.on('answer', (answer) => {
     console.log(answer.to)
-    io.to(answer.to).emit('desk-response', `this is desk response for ${answer.to}`)
+    io.to(answer.to).emit('desk-response', answer.text)
   })
 });
 

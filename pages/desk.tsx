@@ -48,7 +48,7 @@ const Desk = () => {
             <div className={d.desk_actives}>
                 {
                     online_users.map(u=>
-                        <User uniq={u}/>
+                        <User uniq={u.user_id} user_messages={u.user_messages}/>
                     )
                 }
             </div>        
