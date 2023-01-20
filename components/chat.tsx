@@ -5,26 +5,21 @@ import h from "../styles/Home.module.css";
 import e from "cors";
 
 
-const socket = io.connect("http://localhost:9000")
 
+const socket = io("http://localhost:9000")
 
-const Chat = ({modal}) => {
+const Chat = ({modal}) => {  
   const [my_messages, setMymessages] = useState([]);
-  const [chatId, setChatId] = useState(null)
+  const [chatId, setChatId] = useState("id")
   const customer = useRef();
-  socket.on('connect', () =>{
-      setChatId(socket.id)
-    })
+
   useEffect(()=> {
-    
-    socket.connect();
+
+    socket.on("confirm", (confirm) => {
+      console.log(confirm)
+    })
     socket.on('desk-answer', (answer) => {
-      console.log(answer.to)
-      console.log(chatId)
-      if(answer.to === chatId)
-      {
-        setMymessages([...my_messages, {who:"desk", message:answer.text}])
-      }
+      setMymessages([...my_messages, {who:"desk", message:answer.text}])      
     });
   })
   
@@ -33,7 +28,8 @@ const Chat = ({modal}) => {
     e.preventDefault();
     setMymessages([...my_messages, {who:"customer", message:customer.current.value}])
     console.log(my_messages)
-    socket.emit('customer-asking', customer.current.value, chatId);
+    setChatId(socket.id)
+    socket.emit('customer-asking', customer.current.value);
     customer.current.value = "";
 
   }
