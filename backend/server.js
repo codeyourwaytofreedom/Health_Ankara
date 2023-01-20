@@ -36,9 +36,12 @@ io.on('connection', (socket) => {
   })
 
   socket.on('disconnect', () => {
-    if(active_users.includes(socket.id))
+    let ids = [];
+    active_users.map(u => ids.push(u.user_id))
+
+    if(ids.includes(socket.id))
     {
-      let index = active_users.indexOf(socket.id)
+      let index = ids.indexOf(socket.id)
       active_users.splice(index,1)
       io.emit("active-users", active_users)
     }
@@ -46,7 +49,11 @@ io.on('connection', (socket) => {
 
   })
   socket.on('answer', (answer) => {
-    console.log(answer.to)
+    let ids = []
+    active_users.map(u => ids.push(u.user_id));
+    let index = ids.indexOf(answer.to);
+    active_users[index].user_messages.push({a:answer.text})
+    io.emit('active-users', active_users)
     io.to(answer.to).emit('desk-response', answer.text)
   })
 });
