@@ -11,17 +11,8 @@ const Home_p = () => {
         <div className={h.home}>
             <div className={h.home_skeleton}>
                 <div className={h.home_skeleton_heart}>
-                    {/* <Link href="/cardio"> */}
-                        <Image
-                        src="/dental.jpeg"
-                        width={600}
-                        height={408}
-                        alt="xxx"
-                        />
-                    {/* </Link> */}
                 </div>
                 <div className={h.home_skeleton_helpdesk}>
-                {/* <Link href="/chat"> */}
                         <Image
                         onClick={()=> setModal(!modal)}
                         src="/helpdesk.png"
@@ -29,7 +20,6 @@ const Home_p = () => {
                         height={120}
                         alt="xxx"
                         />
-                         {/* </Link> */}
                 </div>
                 <span style={{position:"absolute", bottom:"50px", left:"50px"}}>
                     <Link  href="/desk">

@@ -14,6 +14,11 @@
 }
 .home_skeleton_heart {
   position: absolute;
+  width: 50vw;
+  aspect-ratio: 3/2;
+  background-image: url("../public/dental.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .home_skeleton_helpdesk {
   position: fixed;
@@ -26,10 +31,10 @@
   right: 20px;
   width: 300px;
   height: 420px;
-  border: 2px solid rgb(211, 209, 209);
+  border: 3px solid rgb(211, 209, 209);
   background-color: black;
   border-radius: 15px;
-  background-image: url("../public/background.jpg");
+  background-image: url("../public/metal.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -46,7 +51,9 @@
   display: none;
 }
 .home_chatbox_message_container_message_left {
-  background-color: rgb(249, 249, 125);
+  background-color: white;
+  border: 2px solid black;
+  color: black;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -58,7 +65,9 @@
   max-width: 90%;
 }
 .home_chatbox_message_container_message_right {
-  background-color: whitesmoke;
+  background-color: black;
+  border: 2px solid white;
+  color: white;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;

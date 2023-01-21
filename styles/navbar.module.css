@@ -1,6 +1,51 @@
 .navbar {
-  border: 2px solid crimson;
   position: fixed;
   top: 50px;
-  right: 50px;
+  left: 35vw;
+  display: grid;
+  row-gap: 20px;
+}
+.navbar_brace {
+  background: transparent;
+  border: 3px solid white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.navbar_brace span {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 140px;
+  height: 70px;
+}
+.navbar_brace:hover {
+  -webkit-animation: blink 0.7s infinite;
+          animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink {
+  from {
+    border: 3px solid white;
+  }
+  to {
+    border: 3px solid silver;
+  }
+}
+
+@keyframes blink {
+  from {
+    border: 3px solid white;
+  }
+  to {
+    border: 3px solid silver;
+  }
 }/*# sourceMappingURL=navbar.module.css.map */
