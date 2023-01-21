@@ -15,11 +15,12 @@ const Home_p = () => {
                 <div className={h.home_skeleton_helpdesk}>
                         <Image
                         onClick={()=> setModal(!modal)}
-                        src="/helpdesk.png"
-                        width={160}
+                        src="/askme.png"
+                        width={90}
                         height={120}
                         alt="xxx"
                         />
+                        <h1 style={{position:"relative", left:"-10px"}}>Ask me</h1>
                 </div>
                 <span style={{position:"absolute", bottom:"50px", left:"50px"}}>
                     <Link  href="/desk">

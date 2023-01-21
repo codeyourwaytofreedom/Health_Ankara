@@ -2,8 +2,7 @@ import n from "../styles/navbar.module.css";
 import Image from "next/image";
 import brace from "../public/brace.png";
 import implant from "../public/implant.png";
-import redbg from "../public/redbg.jpg";
-
+import extract from "../public/extract.png";
 const Navbar = () => {
     return ( 
         <div className={n.navbar}>
@@ -14,6 +13,11 @@ const Navbar = () => {
             </button>
             <button className={n.navbar_brace}>
                 <span style={{backgroundImage: `url(${implant.src})`}}>
+                </span>
+                <h3>Implants</h3>
+            </button>
+            <button className={n.navbar_brace}>
+                <span style={{backgroundImage: `url(${extract.src})`}}>
                 </span>
                 <h3>Implants</h3>
             </button>
