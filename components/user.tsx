@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import d from "../styles/desk.module.css";
 import io from 'socket.io-client';
 import h from "../styles/Home.module.css";
+import bg from "../public/background.jpg";
 
 const socket = io.connect("http://localhost:9000")
 
@@ -20,8 +21,8 @@ const User = ({uniq, user_messages}) => {
     
     return ( 
       <>
-        <div className={d.desk_actives_user}>
-            <h3>{uniq}</h3>
+        <div className={d.desk_actives_user} style={{ backgroundImage: `url(${bg.src})` }}>
+            <h3 style={{color:"white"}}>{uniq}</h3>
             <div className={d.desk_actives_user_container}>
               {
                 user_messages.map((m) => 
@@ -32,9 +33,12 @@ const User = ({uniq, user_messages}) => {
               }
               {/* {uniq} */}
             </div>
-            <form action="" onSubmit={(e)=>handle_desk(e)}>
-              <input type="text" ref={ans}/>
-            </form>
+            <div className={d.desk_actives_user_sender}>
+              <form action="" onSubmit={(e)=>handle_desk(e)}>
+                <input type="text" ref={ans}/>
+              </form>
+            </div>
+            
         </div>
       </>
      );

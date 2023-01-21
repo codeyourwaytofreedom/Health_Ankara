@@ -11,13 +11,14 @@
   grid-template-columns: repeat(5, 1fr);
 }
 .desk_actives_user {
-  border: 2px solid crimson;
+  border: 2px solid white;
   display: grid;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  position: relative;
 }
 .desk_actives_user_container {
-  border: 2px solid white;
   height: 370px;
   width: 300px;
   display: flex;
@@ -54,4 +55,25 @@
   align-self: flex-end;
   border-radius: 5px;
   max-width: 90%;
+}
+.desk_actives_user_sender {
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  bottom: 10px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: whitesmoke;
+  display: grid;
+  align-items: center;
+  color: black;
+}
+.desk_actives_user_sender input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  padding-left: 10px;
+}
+.desk_actives_user_sender input:focus {
+  outline: none;
 }/*# sourceMappingURL=desk.module.css.map */

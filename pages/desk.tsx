@@ -13,7 +13,8 @@ const socket = io.connect("http://localhost:9000")
 const Desk = () => {
     const ans = useRef(); 
     const [online_users, setOnline_users] = useState([]);
-    const [desk_response, setDeskResponse] = useState();
+    const [last_asker, setLastAsker] = useState();
+   // const [desk_response, setDeskResponse] = useState();
     
     useEffect(()=> {
         socket.emit('refresh', "hello")
@@ -21,27 +22,18 @@ const Desk = () => {
             setOnline_users(au)
         });
     },[])
-    
+
     useEffect(() => {
         socket.on('connect', () => {
             console.log(socket.id)
         });
-        socket.on('desk-answer', (answer) => {
-            console.log("desk response")
-            setDeskResponse(answer.to)
-        });
         
         socket.on('active-users', (au) => {
-            //console.log("active users from backend",au)
             setOnline_users(au)
         });
         socket.on('take-him-out', (id) => {
             setOnline_users(online_users.filter(ou => ou.user_id !== id))
         });
-        socket.on('receive-question', (q,id)=> {
-            console.log(q,"this question received from: ", id)
-            setLastAsker(id)
-        })
       });
       
     return ( 
@@ -55,6 +47,7 @@ const Desk = () => {
             </div>        
             <div>
                 <h3>{online_users.length}</h3>
+                <h3>Last Asker: {last_asker}</h3>
             </div>
             
         </div>
