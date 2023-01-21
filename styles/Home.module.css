@@ -1,12 +1,10 @@
 .home {
-  background-color: rgb(208, 97, 116);
+  background-color: rgb(200, 168, 110);
   position: relative;
 }
 .home_skeleton {
   height: 100vh;
   max-height: 800px;
-  border: 2px solid black;
-  background-image: url("/skl.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -16,8 +14,6 @@
 }
 .home_skeleton_heart {
   position: absolute;
-  top: 17%;
-  left: 50%;
 }
 .home_skeleton_helpdesk {
   position: fixed;
