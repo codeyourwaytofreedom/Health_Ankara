@@ -14,9 +14,9 @@
 }
 .home_skeleton_heart {
   position: absolute;
+  top: -40px;
   width: 500px;
   aspect-ratio: 3/2;
-  border: 2px solid black;
   background-image: url("../public/dental.jpeg");
   background-repeat: no-repeat;
   background-size: cover;

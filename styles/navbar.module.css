@@ -4,13 +4,12 @@
   -moz-column-gap: 10px;
        column-gap: 10px;
   position: absolute;
-  bottom: -300px;
-  width: 500px;
-  border: 2px solid red;
+  top: 330px;
+  width: 350px;
 }
 .navbar_tab {
   background: transparent;
-  border: 3px solid white;
+  border: none;
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
@@ -26,12 +25,18 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 200px;
+  width: 150px;
   aspect-ratio: 2/1;
 }
-.navbar_tab:hover {
-  -webkit-animation: blink 0.7s infinite;
-          animation: blink 0.7s infinite;
+#blinking_title {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  -webkit-animation: bounce 0.9s infinite;
+          animation: bounce 0.9s infinite;
 }
 
 @-webkit-keyframes blink {
@@ -49,5 +54,39 @@
   }
   to {
     border: 3px solid silver;
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -5px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: -3px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -5px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: -3px;
+  }
+  100% {
+    top: 0;
   }
 }/*# sourceMappingURL=navbar.module.css.map */

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from "react";
 import Chat from "./chat";
 import Navbar from "./navbar";
+import Blinking_title from "./blinking_title";
 
 const Home_p = () => {
     const [modal, setModal] = useState(false)
@@ -11,8 +12,8 @@ const Home_p = () => {
         <div className={h.home}>
             <div className={h.home_skeleton}>
                 <div className={h.home_skeleton_heart}>
-                <Navbar/>
                 </div>
+                <Navbar/>
                 <div className={h.home_skeleton_helpdesk}>
                         <Image
                         onClick={()=> setModal(!modal)}
@@ -23,12 +24,13 @@ const Home_p = () => {
                         />
                         <h1 style={{position:"relative", left:"-10px"}}>Ask me</h1>
                 </div>
-                <span style={{position:"absolute", bottom:"50px", left:"50px"}}>
+                <span style={{position:"absolute", top:"50px", right:"50px"}}>
                     <Link  href="/desk">
                         Desk "Officer only"
                     </Link>
                 </span>
             </div>
+            <Blinking_title letter={"B"} color={"purple"}/>
             <Chat modal={modal}/>
         </div>
       );

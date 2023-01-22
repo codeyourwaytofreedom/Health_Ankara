@@ -4,12 +4,13 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     position: absolute;
-    bottom: -300px;
-    width: 500px;
-    border: 2px solid red;
+    top: 330px;
+    width: 350px;
+    //border: 2px solid red;
     &_tab{
         background: transparent;
-        border: 3px solid white;
+        //border: 3px solid white;
+        border: none;
         cursor:pointer;
         padding: 10px;
         border-radius: 5px;
@@ -25,14 +26,24 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position:center;
-            width: 200px;
+            width: 150px;
             aspect-ratio: 2/1;
             //height: 70px;
         }
         &:hover{
-            animation: blink 0.7s infinite;
+            //animation: blink 0.7s infinite;
         }
     }
+}
+#blinking_title{
+    //border: 2px solid red;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation: bounce 0.9s infinite;
 }
 
 @keyframes blink {
@@ -41,5 +52,22 @@
     }
     to{
         border: 3px solid silver;
+    }
+}
+@keyframes bounce {
+    0%{
+        top:0;
+    }
+    25%{
+        top:-5px;
+    }
+    50%{
+        top:0;
+    }
+    75%{
+        top:-3px;
+    }
+    100%{
+        top:0;
     }
 }
