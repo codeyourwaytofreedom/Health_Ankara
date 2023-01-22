@@ -11,6 +11,7 @@ const Home_p = () => {
         <div className={h.home}>
             <div className={h.home_skeleton}>
                 <div className={h.home_skeleton_heart}>
+                <Navbar/>
                 </div>
                 <div className={h.home_skeleton_helpdesk}>
                         <Image
@@ -29,7 +30,6 @@ const Home_p = () => {
                 </span>
             </div>
             <Chat modal={modal}/>
-            <Navbar/>
         </div>
       );
 }

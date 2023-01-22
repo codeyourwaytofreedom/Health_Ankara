@@ -13,12 +13,13 @@
         align-items: start;
         &_heart{
             position: absolute;
-            width: 50vw;
+            width: 500px;
             aspect-ratio: 3/2;
-            //border: 2px solid black;
+            border: 2px solid black;
             background-image: url("../public/dental.jpeg");
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
         }
         &_helpdesk{
             position: fixed;

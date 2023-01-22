@@ -1,11 +1,14 @@
 .navbar {
-  position: fixed;
-  top: 50px;
-  left: 35vw;
   display: grid;
-  row-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  position: absolute;
+  bottom: -300px;
+  width: 500px;
+  border: 2px solid red;
 }
-.navbar_brace {
+.navbar_tab {
   background: transparent;
   border: 3px solid white;
   cursor: pointer;
@@ -16,18 +19,17 @@
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  /*         width: 12.5vw;
+          height: 100px; */
 }
-.navbar_brace span {
+.navbar_tab span {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 140px;
-  height: 70px;
+  width: 200px;
+  aspect-ratio: 2/1;
 }
-.navbar_brace:hover {
+.navbar_tab:hover {
   -webkit-animation: blink 0.7s infinite;
           animation: blink 0.7s infinite;
 }
