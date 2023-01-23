@@ -30,7 +30,6 @@ const Home_p = () => {
                     </Link>
                 </span>
             </div>
-            <Blinking_title letter={"B"} color={"purple"}/>
             <Chat modal={modal}/>
         </div>
       );

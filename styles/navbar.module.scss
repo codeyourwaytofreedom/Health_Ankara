@@ -19,9 +19,6 @@
         align-items: center;
         background-repeat: no-repeat;
         background-size: cover;
-/*         width: 12.5vw;
-        height: 100px; */
-        //aspect-ratio: 3/2;
         span{
             background-repeat: no-repeat;
             background-size: contain;
@@ -44,6 +41,15 @@
     font-weight: 600;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     animation: bounce 0.9s infinite;
+}
+#rest{
+    color:rgb(61, 57, 57);
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    //border: 2px solid red;
+    height: 21px;
+    padding: 0;
 }
 
 @keyframes blink {

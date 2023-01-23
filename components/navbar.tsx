@@ -4,7 +4,10 @@ import brace from "../public/brace.png";
 import implant from "../public/implant.png";
 import extract from "../public/extract.png";
 import cleaning from "../public/cleaning.png";
+import filling from "../public/filling.png";
+import crown from "../public/crown.png";
 import Blinking_title from "./blinking_title";
+
 
 const Navbar = () => {
     return ( 
@@ -12,7 +15,7 @@ const Navbar = () => {
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${brace.src})`}}>
                 </span>
-                <span style={{fontSize:"21px"}}>
+                <span id={n.rest}>
                     <Blinking_title letter={"B"} color={"purple"}/>rac <Blinking_title letter={"E"} color={"purple"}/> s
                 </span>
   
@@ -21,27 +24,37 @@ const Navbar = () => {
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${implant.src})`}}>
                 </span>
-                <h3>Implants</h3>
+                <span id={n.rest}>
+                    Im<Blinking_title letter={"P"} color={"navy"}/>lant <Blinking_title letter={"S"} color={"navy"}/>
+                </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${extract.src})`}}>
                 </span>
-                <h3>Extractions</h3>
+                <span id={n.rest}>
+                    <Blinking_title letter={"E"} color={"Crimson"}/>xtrac <Blinking_title letter={"T"} color={"Crimson"}/>ion
+                </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${cleaning.src})`}}>
                 </span>
-                <h3>Teeth Cleaning</h3>
+                <span id={n.rest}>
+                    <Blinking_title letter={"T"} color={"aqua"}/>eeth  <Blinking_title letter={"C"} color={"aqua"}/>leaning
+                </span>
             </button>
             <button className={n.navbar_tab}>
-                <span style={{backgroundImage: `url(${extract.src})`}}>
+                <span style={{backgroundImage: `url(${filling.src})`}}>
                 </span>
-                <h3>Extractions</h3>
+                <span id={n.rest}>
+                    <Blinking_title letter={"F"} color={"#3E97FE"}/>illing  <Blinking_title letter={"S"} color={"#3E97FE"}/>leaning
+                </span>
             </button>
             <button className={n.navbar_tab}>
-                <span style={{backgroundImage: `url(${cleaning.src})`}}>
+                <span style={{backgroundImage: `url(${crown.src})`}}>
                 </span>
-                <h3>Teeth Cleaning</h3>
+                <span id={n.rest}>
+                    <Blinking_title letter={"D"} color={"gold"}/>ental  <Blinking_title letter={"C"} color={"gold"}/>rowns
+                </span>
             </button>
         </div>
      );
