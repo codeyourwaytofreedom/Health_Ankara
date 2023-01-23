@@ -12,7 +12,7 @@
         align-items: start;
         &_heart{
             position: absolute;
-            top:-40px;
+            top:80px;
             width: 500px;
             aspect-ratio: 3/2;
             //border: 2px solid black;
@@ -32,10 +32,12 @@
         //border: 2px solid red;
         position: absolute;
         left:370px;
-        top: 50px;
+        top: 150px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 21px;
         text-align: justify;
+        display: grid;
+        row-gap: 20px;
     }
     &_chatbox{
         position: fixed;

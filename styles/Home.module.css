@@ -13,7 +13,7 @@
 }
 .home_skeleton_heart {
   position: absolute;
-  top: -40px;
+  top: 80px;
   width: 500px;
   aspect-ratio: 3/2;
   background-image: url("../public/dental.jpeg");
@@ -30,10 +30,12 @@
 .home_servicedetails {
   position: absolute;
   left: 370px;
-  top: 50px;
+  top: 150px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 21px;
   text-align: justify;
+  display: grid;
+  row-gap: 20px;
 }
 .home_chatbox {
   position: fixed;

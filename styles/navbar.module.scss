@@ -1,11 +1,9 @@
 .navbar{
     //border:2px solid crimson;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+    display: flex;
     position: absolute;
-    top: 330px;
-    width: 350px;
+    top: 30px;
+    right: 0;
     //border: 2px solid red;
     &_tab{
         background: transparent;
