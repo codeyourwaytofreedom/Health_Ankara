@@ -120,7 +120,10 @@
        column-gap: 10px;
   padding: 5px;
   padding-bottom: 90px;
-  height: 400px;
+  height: 600px;
+  position: relative;
+  border: 2px solid black;
+  overflow: hidden;
 }
 .home_happy div {
   display: grid;
@@ -134,22 +137,30 @@
 .home_happy_left {
   width: 25vw;
   aspect-ratio: 3/2;
+  position: relative;
+  left: 0;
 }
 .home_happy_central {
   width: 50vw;
   aspect-ratio: 3/2;
   position: relative;
   left: 0;
-  -webkit-animation: shrink 3s infinite;
-          animation: shrink 3s infinite;
+  -webkit-animation: shrink 6s infinite;
+          animation: shrink 6s infinite;
 }
 .home_happy_right {
   width: 25vw;
   aspect-ratio: 3/2;
   position: relative;
   left: 0;
-  -webkit-animation: enlarge 3s infinite;
-          animation: enlarge 3s infinite;
+  -webkit-animation: enlarge 6s infinite;
+          animation: enlarge 6s infinite;
+}
+.home_happy_right2 {
+  width: 25vw;
+  aspect-ratio: 3/2;
+  position: absolute;
+  right: -25vw;
 }
 
 #clause {
@@ -172,43 +183,59 @@
 }
 
 @-webkit-keyframes shrink {
-  from {
+  0% {
     left: 0;
     width: 50vw;
   }
-  to {
+  50% {
+    left: -25vw;
+    width: 25vw;
+  }
+  100% {
     left: -25vw;
     width: 25vw;
   }
 }
 
 @keyframes shrink {
-  from {
+  0% {
     left: 0;
     width: 50vw;
   }
-  to {
+  50% {
+    left: -25vw;
+    width: 25vw;
+  }
+  100% {
     left: -25vw;
     width: 25vw;
   }
 }
 @-webkit-keyframes enlarge {
-  from {
+  0% {
     left: 0;
     width: 25vw;
   }
-  to {
+  50% {
     left: -25vw;
     width: 50vw;
+  }
+  100% {
+    left: -50vw;
+    width: 25vw;
   }
 }
 @keyframes enlarge {
-  from {
+  0% {
     left: 0;
     width: 25vw;
   }
-  to {
+  50% {
     left: -25vw;
     width: 50vw;
+  }
+  100% {
+    left: -50vw;
+    width: 25vw;
   }
 }/*# sourceMappingURL=Home.module.css.map */

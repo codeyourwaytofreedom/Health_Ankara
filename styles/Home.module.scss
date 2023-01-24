@@ -118,7 +118,10 @@
         column-gap: 10px;
         padding: 5px;
         padding-bottom: 90px;
-        height: 400px;
+        height: 600px;
+        position: relative;
+        border: 2px solid black;
+        overflow: hidden;
         div{
             display: grid;
             justify-content: center;
@@ -133,6 +136,8 @@
                 //border: 2px solid red;
                 width: 25vw;
                 aspect-ratio: 3/2;
+                position: relative;
+                left: 0;
         }
         &_central{
             //border: 3px solid black;
@@ -140,7 +145,7 @@
             aspect-ratio: 3/2;
             position: relative;
             left: 0;
-            animation: shrink 3s infinite;
+            animation: shrink 6s infinite;
         }
         &_right{
             //border: 2px solid red;
@@ -148,7 +153,15 @@
             aspect-ratio: 3/2;
             position: relative;
             left:0;
-            animation: enlarge 3s infinite;
+            animation: enlarge 6s infinite;
+        }
+        &_right2{
+            //border: 2px solid red;
+            width: 25vw;
+            aspect-ratio: 3/2;
+            position: absolute;
+            right: -25vw;
+            //animation: tostart 3s infinite;
         }
     }
 }
@@ -174,23 +187,32 @@
 }
 
 @keyframes shrink {
-    from{
+    0%{
         left:0;
         width: 50vw;
     }
-    to{
+    50%{
         left:-25vw;
         width: 25vw;
     }
+    100%{
+        left:-25vw;
+        width: 25vw;
+    }
+
 }
 
 @keyframes enlarge {
-    from{
+    0%{
         left:0;
         width: 25vw;
     }
-    to{
+    50%{
         left:-25vw;
         width: 50vw;
+    }
+    100%{
+        left:-50vw;
+        width: 25vw;
     }
 }
