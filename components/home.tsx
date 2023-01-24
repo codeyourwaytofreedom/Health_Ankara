@@ -7,6 +7,7 @@ import Navbar from "./navbar";
 import Blinking_title from "./blinking_title";
 import Clause from "./clause";
 import {braces} from "./texts.js";
+import happy1 from "../public/happy1.jpg";
 
 const Home_p = () => {
     const [modal, setModal] = useState(false)
@@ -44,13 +45,13 @@ const Home_p = () => {
             <Chat modal={modal}/>
             <div className={h.home_happy}>
                 <div className={h.home_happy_left}>
-                        Image Left
+
                 </div>
-                <div className={h.home_happy_central}>
-                        Image Central
+                <div className={h.home_happy_central} style={{backgroundImage: `url(${happy1.src})`}}>
+
                 </div>
                 <div className={h.home_happy_right}>
-                        Image Right
+
                 </div>
             </div>
         </div>

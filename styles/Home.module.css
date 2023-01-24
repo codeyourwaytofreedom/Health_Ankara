@@ -1,7 +1,6 @@
 .home {
   scrollbar-color: red yellow;
   position: relative;
-  padding-right: 15px;
 }
 .home_skeleton {
   height: 100vh;
@@ -115,21 +114,35 @@
   outline: none;
 }
 .home_happy {
-  border: 2px solid black;
   display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 5px;
+}
+.home_happy div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+  border: 3px solid white;
 }
 .home_happy_left {
   border: 2px solid red;
-  width: 20vw;
+  width: 25vw;
+  aspect-ratio: 3/2;
 }
 .home_happy_central {
   border: 3px solid black;
-  width: 60vw;
-  height: 600px;
+  width: 50vw;
+  aspect-ratio: 3/2;
 }
 .home_happy_right {
   border: 2px solid red;
-  width: 20vw;
+  width: 25vw;
+  aspect-ratio: 3/2;
 }
 
 #clause {

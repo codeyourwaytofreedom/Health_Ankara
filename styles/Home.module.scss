@@ -1,7 +1,6 @@
 .home{
     scrollbar-color: red yellow;
     position: relative;
-    padding-right: 15px;
     &_skeleton{
         height: 100vh;
         max-height: 800px;
@@ -114,20 +113,33 @@
         }
     }
     &_happy{
-        border: 2px solid black;
         display: flex;
+        align-items: center;
+        column-gap: 10px;
+        padding: 5px;
+        div{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 30px;
+            border: 3px solid white;
+        }
         &_left{
                 border: 2px solid red;
-                width: 20vw;
+                width: 25vw;
+                aspect-ratio: 3/2;
         }
         &_central{
             border: 3px solid black;
-            width: 60vw;
-            height: 600px;
+            width: 50vw;
+            aspect-ratio: 3/2;
         }
         &_right{
             border: 2px solid red;
-            width: 20vw;
+            width: 25vw;
+            aspect-ratio: 3/2;
         }
     }
 }
