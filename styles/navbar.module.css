@@ -2,13 +2,12 @@
   display: flex;
   position: absolute;
   top: 30px;
-  right: 0;
+  right: 15px;
 }
 .navbar_tab {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 10px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -20,7 +19,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 150px;
+  width: 13vw;
+  max-width: 130px;
   aspect-ratio: 2/1;
 }
 #blinking_title {
@@ -35,7 +35,7 @@
 }
 
 #rest {
-  color: rgb(61, 57, 57);
+  color: navy;
   font-weight: 600;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 21px;

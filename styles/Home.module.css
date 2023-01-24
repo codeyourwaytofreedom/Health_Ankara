@@ -1,6 +1,7 @@
 .home {
-  background-color: rgb(200, 168, 110);
+  scrollbar-color: red yellow;
   position: relative;
+  padding-right: 15px;
 }
 .home_skeleton {
   height: 100vh;
@@ -13,7 +14,7 @@
 }
 .home_skeleton_heart {
   position: absolute;
-  top: 80px;
+  top: 140px;
   width: 500px;
   aspect-ratio: 3/2;
   background-image: url("../public/dental.jpeg");
@@ -30,7 +31,7 @@
 .home_servicedetails {
   position: absolute;
   left: 370px;
-  top: 150px;
+  top: 200px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 21px;
   text-align: justify;
@@ -112,6 +113,23 @@
 }
 .home_chatbox_sender input:focus {
   outline: none;
+}
+.home_happy {
+  border: 2px solid black;
+  display: flex;
+}
+.home_happy_left {
+  border: 2px solid red;
+  width: 20vw;
+}
+.home_happy_central {
+  border: 3px solid black;
+  width: 60vw;
+  height: 600px;
+}
+.home_happy_right {
+  border: 2px solid red;
+  width: 20vw;
 }
 
 #clause {

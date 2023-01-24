@@ -16,42 +16,42 @@ const Navbar = () => {
                 <span style={{backgroundImage: `url(${brace.src})`}}>
                 </span>
                 <span id={n.rest}>
-                    <Blinking_title letter={"B"} color={"navy"}/>rac <Blinking_title letter={"E"} color={"navy"}/> s
+                    <Blinking_title letter={"B"} color={"navy"}/>races
                 </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${implant.src})`}}>
                 </span>
                 <span id={n.rest}>
-                    Im<Blinking_title letter={"P"} color={"navy"}/>lant <Blinking_title letter={"S"} color={"navy"}/>
+                    <Blinking_title letter={"I"} color={"navy"}/>mlants
                 </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${extract.src})`}}>
                 </span>
                 <span id={n.rest}>
-                    <Blinking_title letter={"E"} color={"navy"}/>xtrac <Blinking_title letter={"T"} color={"navy"}/>ion
+                    <Blinking_title letter={"E"} color={"navy"}/>xtraction
                 </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${cleaning.src})`}}>
                 </span>
                 <span id={n.rest}>
-                    <Blinking_title letter={"T"} color={"navy"}/>eeth  <Blinking_title letter={"C"} color={"navy"}/>leaning
+                    <Blinking_title letter={"T"} color={"navy"}/>eeth  Cleaning
                 </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${filling.src})`}}>
                 </span>
                 <span id={n.rest}>
-                    <Blinking_title letter={"F"} color={"navy"}/>illing  <Blinking_title letter={"S"} color={"navy"}/>
+                    <Blinking_title letter={"F"} color={"navy"}/>illings
                 </span>
             </button>
             <button className={n.navbar_tab}>
                 <span style={{backgroundImage: `url(${crown.src})`}}>
                 </span>
                 <span id={n.rest}>
-                    <Blinking_title letter={"D"} color={"navy"}/>ental  <Blinking_title letter={"C"} color={"navy"}/>rowns
+                    <Blinking_title letter={"D"} color={"navy"}/>ental  Crowns
                 </span>
             </button>
         </div>

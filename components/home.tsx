@@ -42,6 +42,17 @@ const Home_p = () => {
                 }
             </div>
             <Chat modal={modal}/>
+            <div className={h.home_happy}>
+                <div className={h.home_happy_left}>
+                        Image Left
+                </div>
+                <div className={h.home_happy_central}>
+                        Image Central
+                </div>
+                <div className={h.home_happy_right}>
+                        Image Right
+                </div>
+            </div>
         </div>
       );
 }

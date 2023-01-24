@@ -3,14 +3,14 @@
     display: flex;
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 15px;
     //border: 2px solid red;
     &_tab{
         background: transparent;
         //border: 3px solid white;
         border: none;
+        //border: 2px solid black;
         cursor:pointer;
-        padding: 10px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -21,7 +21,8 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position:center;
-            width: 150px;
+            width: 13vw;
+            max-width: 130px;
             aspect-ratio: 2/1;
             //height: 70px;
         }
@@ -41,7 +42,7 @@
     animation: bounce 0.9s infinite;
 }
 #rest{
-    color:rgb(61, 57, 57);
+    color:navy;
     font-weight: 600;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 21px;

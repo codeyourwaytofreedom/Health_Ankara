@@ -1,6 +1,7 @@
 .home{
-    background-color: rgb(200, 168, 110);
+    scrollbar-color: red yellow;
     position: relative;
+    padding-right: 15px;
     &_skeleton{
         height: 100vh;
         max-height: 800px;
@@ -12,7 +13,7 @@
         align-items: start;
         &_heart{
             position: absolute;
-            top:80px;
+            top:140px;
             width: 500px;
             aspect-ratio: 3/2;
             //border: 2px solid black;
@@ -32,7 +33,7 @@
         //border: 2px solid red;
         position: absolute;
         left:370px;
-        top: 150px;
+        top: 200px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 21px;
         text-align: justify;
@@ -110,6 +111,23 @@
                     outline: none;
                 }
             }
+        }
+    }
+    &_happy{
+        border: 2px solid black;
+        display: flex;
+        &_left{
+                border: 2px solid red;
+                width: 20vw;
+        }
+        &_central{
+            border: 3px solid black;
+            width: 60vw;
+            height: 600px;
+        }
+        &_right{
+            border: 2px solid red;
+            width: 20vw;
         }
     }
 }
