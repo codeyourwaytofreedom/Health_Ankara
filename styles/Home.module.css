@@ -122,7 +122,6 @@
   padding-bottom: 90px;
   height: 600px;
   position: relative;
-  border: 2px solid black;
   overflow: hidden;
 }
 .home_happy div {
@@ -139,22 +138,23 @@
   aspect-ratio: 3/2;
   position: relative;
   left: 0;
+  -webkit-animation: first_to_end 6s 3s infinite;
+          animation: first_to_end 6s 3s infinite;
+  z-index: 99 !important;
 }
 .home_happy_central {
   width: 50vw;
   aspect-ratio: 3/2;
   position: relative;
   left: 0;
-  -webkit-animation: shrink 6s infinite;
-          animation: shrink 6s infinite;
+  visibility: hidden;
 }
 .home_happy_right {
   width: 25vw;
   aspect-ratio: 3/2;
   position: relative;
   left: 0;
-  -webkit-animation: enlarge 6s infinite;
-          animation: enlarge 6s infinite;
+  visibility: hidden;
 }
 .home_happy_right2 {
   width: 25vw;
@@ -237,5 +237,43 @@
   100% {
     left: -50vw;
     width: 25vw;
+  }
+}
+@-webkit-keyframes first_to_end {
+  0% {
+    width: 25vw;
+    left: 75vw;
+  }
+  33% {
+    width: 25vw;
+    left: 75vw;
+  }
+  66% {
+    width: 50vw;
+    left: 25vw;
+    visibility: visible;
+  }
+  99% {
+    width: 25vw;
+    left: 0vw;
+  }
+}
+@keyframes first_to_end {
+  0% {
+    width: 25vw;
+    left: 75vw;
+  }
+  33% {
+    width: 25vw;
+    left: 75vw;
+  }
+  66% {
+    width: 50vw;
+    left: 25vw;
+    visibility: visible;
+  }
+  99% {
+    width: 25vw;
+    left: 0vw;
   }
 }/*# sourceMappingURL=Home.module.css.map */
