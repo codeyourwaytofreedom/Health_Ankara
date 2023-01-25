@@ -136,20 +136,16 @@
                 //border: 2px solid red;
                 width: 25vw;
                 aspect-ratio: 3/2;
-                position: relative;
-                left: 0;
-                animation: first_to_end 6s 3s infinite; 
-                //animation-delay: 3s;
-                z-index: 99 !important;
+                position: absolute;
+                animation: first_to_end 9s infinite; 
         }
         &_central{
             //border: 3px solid black;
             width: 50vw;
             aspect-ratio: 3/2;
-            position: relative;
-            left: 0;
-            //animation: shrink 6s infinite;
-            visibility: hidden;
+            position: absolute;
+            animation: shrink 9s infinite;
+            
         }
         &_right{
             //border: 2px solid red;
@@ -158,15 +154,6 @@
             position: relative;
             left:0;
             //animation: enlarge 6s infinite;
-            visibility: hidden;
-        }
-        &_right2{
-            //border: 2px solid red;
-            width: 25vw;
-            aspect-ratio: 3/2;
-            position: absolute;
-            right: -25vw;
-            //animation: tostart 3s infinite;
         }
     }
 }
@@ -193,51 +180,42 @@
 
 @keyframes shrink {
     0%{
-        left:0;
+        left:25vw;
         width: 50vw;
     }
-    50%{
-        left:-25vw;
+    33%{
+        left:0vw;
+        width: 25vw
+    }
+    66%{
+        left:74vw;
         width: 25vw;
     }
     100%{
-        left:-25vw;
-        width: 25vw;
+        width: 50vw;
+        left: 25vw;
+        z-index: 999 !important;
     }
 
 }
 
-@keyframes enlarge {
-    0%{
-        left:0;
-        width: 25vw;
-    }
-    50%{
-        left:-25vw;
-        width: 50vw;
-    }
-    100%{
-        left:-50vw;
-        width: 25vw;
-    }
-}
 
 @keyframes first_to_end {
     0%{
         width: 25vw;
-        left: 75vw;
+        left: 74vw;
     }
     33%{
-        width: 25vw;
-        left: 75vw;
-    }
-    66%{
+        z-index: 99;
         width: 50vw;
         left: 25vw;
-        visibility: visible;
     }
-    99%{
+    66%{
         width: 25vw;
-        left: 0vw;
+        left: 0;
+    }
+    100%{
+        width: 25vw;
+        left: 74vw;
     }
 }

@@ -136,31 +136,22 @@
 .home_happy_left {
   width: 25vw;
   aspect-ratio: 3/2;
-  position: relative;
-  left: 0;
-  -webkit-animation: first_to_end 6s 3s infinite;
-          animation: first_to_end 6s 3s infinite;
-  z-index: 99 !important;
+  position: absolute;
+  -webkit-animation: first_to_end 9s infinite;
+          animation: first_to_end 9s infinite;
 }
 .home_happy_central {
   width: 50vw;
   aspect-ratio: 3/2;
-  position: relative;
-  left: 0;
-  visibility: hidden;
+  position: absolute;
+  -webkit-animation: shrink 9s infinite;
+          animation: shrink 9s infinite;
 }
 .home_happy_right {
   width: 25vw;
   aspect-ratio: 3/2;
   position: relative;
   left: 0;
-  visibility: hidden;
-}
-.home_happy_right2 {
-  width: 25vw;
-  aspect-ratio: 3/2;
-  position: absolute;
-  right: -25vw;
 }
 
 #clause {
@@ -184,96 +175,78 @@
 
 @-webkit-keyframes shrink {
   0% {
-    left: 0;
+    left: 25vw;
     width: 50vw;
   }
-  50% {
-    left: -25vw;
+  33% {
+    left: 0vw;
+    width: 25vw;
+  }
+  66% {
+    left: 74vw;
     width: 25vw;
   }
   100% {
-    left: -25vw;
-    width: 25vw;
+    width: 50vw;
+    left: 25vw;
+    z-index: 999 !important;
   }
 }
 
 @keyframes shrink {
   0% {
-    left: 0;
+    left: 25vw;
     width: 50vw;
   }
-  50% {
-    left: -25vw;
+  33% {
+    left: 0vw;
+    width: 25vw;
+  }
+  66% {
+    left: 74vw;
     width: 25vw;
   }
   100% {
-    left: -25vw;
-    width: 25vw;
-  }
-}
-@-webkit-keyframes enlarge {
-  0% {
-    left: 0;
-    width: 25vw;
-  }
-  50% {
-    left: -25vw;
     width: 50vw;
-  }
-  100% {
-    left: -50vw;
-    width: 25vw;
-  }
-}
-@keyframes enlarge {
-  0% {
-    left: 0;
-    width: 25vw;
-  }
-  50% {
-    left: -25vw;
-    width: 50vw;
-  }
-  100% {
-    left: -50vw;
-    width: 25vw;
+    left: 25vw;
+    z-index: 999 !important;
   }
 }
 @-webkit-keyframes first_to_end {
   0% {
     width: 25vw;
-    left: 75vw;
+    left: 74vw;
   }
   33% {
-    width: 25vw;
-    left: 75vw;
-  }
-  66% {
+    z-index: 99;
     width: 50vw;
     left: 25vw;
-    visibility: visible;
   }
-  99% {
+  66% {
     width: 25vw;
-    left: 0vw;
+    left: 0;
+  }
+  100% {
+    width: 25vw;
+    left: 74vw;
   }
 }
 @keyframes first_to_end {
   0% {
     width: 25vw;
-    left: 75vw;
+    left: 74vw;
   }
   33% {
-    width: 25vw;
-    left: 75vw;
-  }
-  66% {
+    z-index: 99;
     width: 50vw;
     left: 25vw;
-    visibility: visible;
   }
-  99% {
+  66% {
     width: 25vw;
-    left: 0vw;
+    left: 0;
+  }
+  100% {
+    width: 25vw;
+    left: 74vw;
   }
 }/*# sourceMappingURL=Home.module.css.map */
