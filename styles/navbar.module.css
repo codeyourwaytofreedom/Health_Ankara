@@ -1,8 +1,13 @@
 .navbar {
   display: flex;
   position: absolute;
-  top: 30px;
-  right: 15px;
+  top: 0;
+  background-color: rgb(55, 54, 54);
+  justify-content: flex-end;
+  width: 100vw;
+  padding: 10px;
+  padding-top: 20px;
+  padding-right: 30px;
 }
 .navbar_tab {
   background: transparent;
@@ -20,27 +25,28 @@
   background-size: contain;
   background-position: center;
   width: 13vw;
-  max-width: 130px;
+  max-width: 100px;
   aspect-ratio: 2/1;
 }
 #blinking_title {
   position: relative;
   padding: 0;
   margin: 0;
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 600;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   -webkit-animation: bounce 0.9s infinite;
           animation: bounce 0.9s infinite;
+  color: white !important;
 }
 
 #rest {
   color: navy;
-  font-weight: 600;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 21px;
+  font-size: 17px;
   height: 21px;
   padding: 0;
+  color: white;
 }
 
 @-webkit-keyframes blink {

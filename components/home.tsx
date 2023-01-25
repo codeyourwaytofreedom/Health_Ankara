@@ -19,20 +19,11 @@ import happy8 from "../public/happy8.jpg";
 const Home_p = () => {
     const [modal, setModal] = useState(false)
     const [service, setService] = useState(braces)
-    const restart = [happy1,happy2,happy3,happy4, happy5, happy6, happy7, happy8]
-    const [smiles,setSmiles] = useState([happy1,happy2,happy3,happy4, happy5, happy6, happy7, happy8])
+    const one = [happy1,happy2,happy3]
+    const two = [happy4, happy5, happy6]
+    const three = [happy7, happy8, happy1]
 
-    setTimeout(() => {
-        let right = smiles.slice(2, 3);
-        let rest = smiles.slice(1,smiles.length)
-        if(smiles.length>3)
-        {
-            setSmiles(smiles.filter(i => i !== smiles[2]))
-        }
-        else{
-            setSmiles(restart)
-        }
-    }, 9000);
+    const [smiles,setSmiles] = useState(one)
 
     return (
         <div className={h.home}>

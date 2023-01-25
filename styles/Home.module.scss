@@ -12,13 +12,14 @@
         align-items: start;
         &_heart{
             position: absolute;
-            top:140px;
+            top:185px;
             width: 500px;
+            left: -50px;
             aspect-ratio: 3/2;
             //border: 2px solid black;
-            background-image: url("../public/dental.jpeg");
+            background-image: url("../public/tooth.png");
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
         }
         &_helpdesk{
@@ -45,10 +46,11 @@
         right: 20px;
         width: 300px;
         height: 420px;
-        border: 3px solid rgb(211, 209, 209);
+        border: 1px solid rgb(55, 54, 54);
         background-color: black;
         border-radius: 15px;
-        background-image: url("../public/metal.jpg");
+        //background-image: url("../public/metal.jpg");
+        background-color: #FDD263;
         background-repeat: no-repeat;
         background-size: cover;
         &_message_container{
@@ -171,6 +173,7 @@
     #text{
         width: 55vw;
         color: rgb(241, 236, 236);
+        color: black;
         font-family: 'Times New Roman', Times, serif;
         display: flex;
         align-items: center;
