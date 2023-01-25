@@ -150,8 +150,10 @@
 .home_happy_right {
   width: 25vw;
   aspect-ratio: 3/2;
-  position: relative;
+  position: absolute;
   left: 0;
+  -webkit-animation: from_left_to_right 9s infinite;
+          animation: from_left_to_right 9s infinite;
 }
 
 #clause {
@@ -177,9 +179,14 @@
   0% {
     left: 25vw;
     width: 50vw;
+    z-index: 999;
   }
   33% {
     left: 0vw;
+    width: 25vw;
+  }
+  50% {
+    left: 74vw;
     width: 25vw;
   }
   66% {
@@ -197,9 +204,14 @@
   0% {
     left: 25vw;
     width: 50vw;
+    z-index: 999;
   }
   33% {
     left: 0vw;
+    width: 25vw;
+  }
+  50% {
+    left: 74vw;
     width: 25vw;
   }
   66% {
@@ -216,15 +228,22 @@
   0% {
     width: 25vw;
     left: 74vw;
+    z-index: 9999999;
   }
   33% {
-    z-index: 99;
+    z-index: 9999;
     width: 50vw;
     left: 25vw;
+    z-index: 9999999;
   }
   66% {
     width: 25vw;
     left: 0;
+    z-index: 1 !important;
+  }
+  90% {
+    width: 25vw;
+    left: 74vw;
   }
   100% {
     width: 25vw;
@@ -235,18 +254,75 @@
   0% {
     width: 25vw;
     left: 74vw;
+    z-index: 9999999;
   }
   33% {
-    z-index: 99;
+    z-index: 9999;
     width: 50vw;
     left: 25vw;
+    z-index: 9999999;
   }
   66% {
     width: 25vw;
     left: 0;
+    z-index: 1 !important;
+  }
+  90% {
+    width: 25vw;
+    left: 74vw;
   }
   100% {
     width: 25vw;
     left: 74vw;
+  }
+}
+@-webkit-keyframes from_left_to_right {
+  0% {
+    left: 0;
+    width: 25vw;
+    z-index: 1 !important;
+  }
+  20% {
+    left: 74vw;
+    width: 25vw;
+    z-index: 1 !important;
+  }
+  33% {
+    left: 74vw;
+    width: 25vw;
+    z-index: 1 !important;
+  }
+  66% {
+    width: 50vw;
+    left: 25vw;
+  }
+  100% {
+    left: 0;
+    width: 25vw;
+  }
+}
+@keyframes from_left_to_right {
+  0% {
+    left: 0;
+    width: 25vw;
+    z-index: 1 !important;
+  }
+  20% {
+    left: 74vw;
+    width: 25vw;
+    z-index: 1 !important;
+  }
+  33% {
+    left: 74vw;
+    width: 25vw;
+    z-index: 1 !important;
+  }
+  66% {
+    width: 50vw;
+    left: 25vw;
+  }
+  100% {
+    left: 0;
+    width: 25vw;
   }
 }/*# sourceMappingURL=Home.module.css.map */

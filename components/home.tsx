@@ -53,9 +53,9 @@ const Home_p = () => {
                 <div className={h.home_happy_central} style={{backgroundImage: `url(${happy1.src})`}}>
 
                 </div>
-{/*                 <div className={h.home_happy_right} style={{backgroundImage: `url(${happy2.src})`}}>
+                <div className={h.home_happy_right} style={{backgroundImage: `url(${happy2.src})`}}>
 
-                </div> */}
+                </div>
 {/*                 <div className={h.home_happy_right2} style={{backgroundImage: `url(${happy4.src})`}}>
 
                 </div> */}
