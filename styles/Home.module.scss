@@ -12,7 +12,7 @@
         align-items: start;
         &_heart{
             position: absolute;
-            top:185px;
+            top:130px;
             width: 500px;
             left: -50px;
             aspect-ratio: 3/2;
@@ -27,13 +27,16 @@
             bottom: 3%;
             right:2%;
             cursor: pointer;
+            h2{
+                color: black;
+                animation: shine 0.5s infinite;
+            }
         }
     }
     &_servicedetails{
-        //border: 2px solid red;
         position: absolute;
         left:370px;
-        top: 200px;
+        top: 140px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 21px;
         text-align: justify;
@@ -163,6 +166,7 @@
     //border: 3px solid black;
     display: flex;
     column-gap: 10px;
+    width: 50vw;
     #logo{
         width: 40px;
         height: 40px;
@@ -257,5 +261,15 @@
     100%{
         left:0;
         width: 25vw;
+    }
+}
+
+
+@keyframes shine {
+    from{
+        text-shadow: 0px 0px gold;
+    }
+    to{
+        text-shadow: 2px 2px gold;
     }
 }

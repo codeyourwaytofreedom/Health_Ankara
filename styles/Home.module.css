@@ -13,7 +13,7 @@
 }
 .home_skeleton_heart {
   position: absolute;
-  top: 185px;
+  top: 130px;
   width: 500px;
   left: -50px;
   aspect-ratio: 3/2;
@@ -28,10 +28,15 @@
   right: 2%;
   cursor: pointer;
 }
+.home_skeleton_helpdesk h2 {
+  color: black;
+  -webkit-animation: shine 0.5s infinite;
+          animation: shine 0.5s infinite;
+}
 .home_servicedetails {
   position: absolute;
   left: 370px;
-  top: 200px;
+  top: 140px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 21px;
   text-align: justify;
@@ -160,6 +165,7 @@
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  width: 50vw;
 }
 #clause #logo {
   width: 40px;
@@ -325,5 +331,21 @@
   100% {
     left: 0;
     width: 25vw;
+  }
+}
+@-webkit-keyframes shine {
+  from {
+    text-shadow: 0px 0px gold;
+  }
+  to {
+    text-shadow: 2px 2px gold;
+  }
+}
+@keyframes shine {
+  from {
+    text-shadow: 0px 0px gold;
+  }
+  to {
+    text-shadow: 2px 2px gold;
   }
 }/*# sourceMappingURL=Home.module.css.map */

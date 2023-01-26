@@ -19,7 +19,7 @@ import happy8 from "../public/happy8.jpg";
 const Home_p = () => {
     const [modal, setModal] = useState(false)
     const [service, setService] = useState(braces)
-    const one = [happy1,happy2,happy3]
+    const one = [happy1,happy2,happy3,happy4, happy5, happy6,happy7, happy8]
     const two = [happy4, happy5, happy6]
     const three = [happy7, happy8, happy1]
 
@@ -39,7 +39,7 @@ const Home_p = () => {
                         height={120}
                         alt="xxx"
                         />
-                        <h1 style={{position:"relative", left:"-10px"}}>Ask me</h1>
+                        <h2>Ask me</h2>
                 </div>
 {/*                 <span style={{position:"absolute", top:"50px", right:"50px"}}>
                     <Link  href="/desk">
@@ -58,7 +58,7 @@ const Home_p = () => {
             <div className={h.home_happy}>
                 <div className={h.home_happy_right} style={{backgroundImage: `url(${smiles[0].src})`}}>
                 </div>
-                <div className={h.home_happy_central} style={{backgroundImage: `url(${smiles[1].src})`}}>
+                <div className={h.home_happy_central} style={{backgroundImage: `url(${smiles[3].src})`}}>
                 </div>
                 <div className={h.home_happy_left} style={{backgroundImage: `url(${smiles[2].src})`}}>
                 </div>

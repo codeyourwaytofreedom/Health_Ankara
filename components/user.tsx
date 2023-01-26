@@ -20,7 +20,7 @@ const User = ({uniq, user_messages}) => {
     return ( 
       <>
         <div className={d.desk_actives_user} style={{ backgroundImage: user_messages[user_messages.length-1].q ? `url(${redbg.src})` : `url(${bg.src})` }}> 
-            <h3 style={{color:"white"}}>{uniq}</h3>
+            {/* <h3 style={{color:"white"}}>{uniq}</h3> */}
             <div className={d.desk_actives_user_container}>
               {
                 user_messages.map((m) => 

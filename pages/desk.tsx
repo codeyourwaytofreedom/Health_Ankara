@@ -46,8 +46,8 @@ const Desk = () => {
                 }
             </div>        
             <div>
-                <h3>{online_users.length}</h3>
-                <h3>Last Asker: {last_asker}</h3>
+                <h1 style={{color:"white", position:"absolute", top:"63vh"}}>{online_users.length} Active Conversations</h1>
+                {/* <h3>Last Asker: {last_asker}</h3> */}
             </div>
             
         </div>

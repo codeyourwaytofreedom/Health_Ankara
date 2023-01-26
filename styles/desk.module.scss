@@ -3,11 +3,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("../public/desk.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
     &_actives{
-        border: 2px solid gold;
+        //border: 2px solid gold;
         width: 100vw;
         display: grid;
         grid-template-columns: repeat(5,1fr);
+        column-gap: 10px;
         &_user{
             border:2px solid white;
             display: grid;

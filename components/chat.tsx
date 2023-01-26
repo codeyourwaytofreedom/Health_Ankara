@@ -49,7 +49,7 @@ const Chat = ({modal}) => {
                 <input type="text" placeholder="Ask help desk..." ref={customer} />
               </form>
             </div>
-            <h3 style={{color:"white", position:"absolute", top:"-50px"}}>{chatId}</h3>
+            {/* <h3 style={{color:"white", position:"absolute", top:"-50px"}}>{chatId}</h3> */}
           </div>
     );
 }
